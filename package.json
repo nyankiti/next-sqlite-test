@@ -2,23 +2,35 @@
   "name": "next-sqlite-test",
   "version": "0.1.0",
   "private": true,
+  "prisma": {
+   "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+  },  
   "scripts": {
-    "dev": "next dev",
+    "dev": "DATABASE_URL=file:./data.db next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "DATABASE_URL=file:./data.db next start",
+    "lint": "next lint",
+    "prisma": "DATABASE_URL=file:./data.db prisma"
   },
   "dependencies": {
+    "@prisma/client": "^4.10.1",
     "next": "13.2.1",
+    "ohmyfetch": "^0.4.21",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "swr": "^2.0.3"
   },
   "devDependencies": {
     "@types/node": "18.14.1",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
+    "autoprefixer": "^10.4.13",
     "eslint": "8.34.0",
     "eslint-config-next": "13.2.1",
+    "postcss": "^8.4.21",
+    "prisma": "^4.10.1",
+    "tailwindcss": "^3.2.7",
+    "ts-node": "^10.9.1",
     "typescript": "4.9.5"
   }
 }

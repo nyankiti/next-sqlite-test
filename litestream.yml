@@ -1,0 +1,4 @@
+dbs:
+  - path: ./data.db
+    replicas:
+      - url: gcs://next_sqlite_litestream_test/replicas
